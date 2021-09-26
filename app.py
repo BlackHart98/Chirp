@@ -13,7 +13,7 @@ recommender_system = lt.Litmus()
 
 @app.route('/', methods = ["GET"])
 def index():
-    with open(os.path.dirname(app.root_path) + '/Chirp/README.md','r') as readme:
+    with open(os.path.dirname(app.root_path) + '/README.md','r') as readme:
         content = readme.read()
         return markdown.markdown(content)
 
