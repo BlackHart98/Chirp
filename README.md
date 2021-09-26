@@ -11,7 +11,7 @@ All response are of the json format
 }
 ```
 
-All requests are of this json format
+All requests are of the json format
 
 ```json
 {
