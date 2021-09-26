@@ -11,10 +11,8 @@ All response is of the json format
 ```
 
 ## Request
-**GET "/"**
-Returns the Readme html page
 
-**GET "/recommend"**
+**GET "/"**
 Returns a valid json request for chirp is of the format listed below
 
 
