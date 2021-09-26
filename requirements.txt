@@ -4,3 +4,4 @@ gunicorn==20.1.0
 itsdangerous==1.1.0
 MarkupSafe==1.1.1
 Werkzeug==0.15.6
+numpy==1.18.1
