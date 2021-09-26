@@ -1,7 +1,7 @@
 # Chirp (Readme)
 
 ## In a nutshell
-All response are of the json format
+All responses are of the json format
 
 ```json
 {
