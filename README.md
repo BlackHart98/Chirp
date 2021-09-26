@@ -1,6 +1,7 @@
 # Chirp (Readme)
-## Response
-All response is of the json format
+
+## In a nutshell
+All response are of the json format
 
 ```json
 {
@@ -10,11 +11,7 @@ All response is of the json format
 }
 ```
 
-## Request
-
-**GET "/"**
-Returns a valid json request for chirp is of the format listed below
-
+All requests are of this json format
 
 ```json
 {
@@ -25,7 +22,15 @@ Returns a valid json request for chirp is of the format listed below
 }
 ```
 
-## Json Get Request Schema Description
+
+## Endpoints
+
+**GET "/"**
+Returns a valid json request for chirp is of the format listed below
+
+
+
+### Json Get Request Schema Description
 
 1. **current_data** - list of current data
 2. **id** - integer or string for the id of the data
@@ -69,7 +74,7 @@ Returns a valid json request for chirp is of the format listed below
 }
 ```
 
-## Json Response Schema Description
+### Json Response Schema Description
 1. **data** - list of id
 2. **message** - string of the resulting message from the system
 3. **status** - string the status of the system which could either be failed or success
