@@ -25,7 +25,7 @@ All requests are of the json format
 
 ## Endpoints
 
-**GET "/"**
+**POST "/"**
 Returns a valid json request for chirp is of the format listed below
 
 

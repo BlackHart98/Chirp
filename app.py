@@ -3,17 +3,17 @@ import json
 import Litmus as lt
 import utils
 import os
-# import markdown
+import markdown
 
 app = Flask(__name__)
 
-TIMEOUT = 1800
+# TIMEOUT = 1800
 
 recommender_system = lt.Litmus()
 
 # @app.route('/', methods = ["GET"])
 # def index():
-#     with open(os.path.dirname(app.root_path) + '/README.md','r') as readme:
+#     with open('README.md','r') as readme:
 #         content = readme.read()
 #         return markdown.markdown(content)
 
@@ -49,7 +49,7 @@ recommender_system = lt.Litmus()
 #         }
 #         )
 
-@app.route('/',methods = ["GET"])
+@app.route('/',methods = ["POST"])
 def recommendationDebug():
     data = request.get_json()
     parse = utils.chirpJsonParser(data)
@@ -78,4 +78,3 @@ def recommendationDebug():
 
 if __name__ == "__main__":
     app.run(debug = True)
-    pass
