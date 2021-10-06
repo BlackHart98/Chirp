@@ -37,6 +37,7 @@ class population:
 	def select(self):
 		add=.0
 		self.pair_list=[]
+		self.fit_prob = []
 		for i in range(self.pop_size):
 			# print(self.chrom_set[i].getFitness())
 			add+=self.chrom_set[i].getFitness()

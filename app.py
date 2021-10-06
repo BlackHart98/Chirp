@@ -7,15 +7,14 @@ import markdown
 
 app = Flask(__name__)
 
-TIMEOUT = 1800
+# TIMEOUT = 1800
 
-recommender_system = lt.Litmus()
 
-@app.route('/', methods = ["GET"])
-def index():
-    with open(os.path.dirname(app.root_path) + '/Chirp/README.md','r') as readme:
-        content = readme.read()
-        return markdown.markdown(content)
+# @app.route('/', methods = ["GET"])
+# def index():
+#     with open('README.md','r') as readme:
+#         content = readme.read()
+#         return markdown.markdown(content)
 
 
 # @app.route('/recommend', methods = ["GET"])
@@ -49,13 +48,14 @@ def index():
 #         }
 #         )
 
-@app.route('/recommend',methods = ["GET"])
+@app.route('/',methods = ["POST"])
 def recommendationDebug():
     data = request.get_json()
     parse = utils.chirpJsonParser(data)
     if parse[0]:
         new_data = utils.normalizeJson(data)
         # print(new_data)
+        recommender_system = lt.Litmus()
         result = recommender_system.recommendContent(
         new_data["current_data"], new_data["data_pool"],
         new_data["interest_score"], new_data["number_of_recommendations"],
@@ -69,13 +69,13 @@ def recommendationDebug():
             }
             )
         return jsonify(
-        {"data" : result["new content"],
-        "message" : "",
-        "status" : result["status"]}
+        {"data" : result["new content"]
+        # ,"vector" : result["user taste"]
+        ,"message" : ""
+        ,"status" : result["status"]}
         )
     else:
         return jsonify({"data" : [], "message" : parse[1], "status" : "Failed"})
 
 if __name__ == "__main__":
     app.run(debug = True)
-    pass
