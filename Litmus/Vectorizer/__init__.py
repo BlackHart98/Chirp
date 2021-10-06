@@ -53,6 +53,7 @@ class LitmusVectorizer:
 
     def setInterestScore(self, interest_score_list):
         self.interest_score_list = interest_score_list
+        # print(self.interest_score_list)
 
 
     def setCurrentData(self, current_data):

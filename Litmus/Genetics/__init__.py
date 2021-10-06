@@ -42,6 +42,7 @@ class LitmusGenetics:
         gene_obj.setGeneString(associated_content)
         # print(gene_obj.getIndividual(0).getChromosome())
         gene_obj.setFitness(fitness)
+        # print(gene_obj.getFitness())
         gene_obj.epoch()
         pseudo_content = []
         for i in range(self.population_size):

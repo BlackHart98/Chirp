@@ -9,7 +9,6 @@ app = Flask(__name__)
 
 # TIMEOUT = 1800
 
-recommender_system = lt.Litmus()
 
 # @app.route('/', methods = ["GET"])
 # def index():
@@ -56,6 +55,7 @@ def recommendationDebug():
     if parse[0]:
         new_data = utils.normalizeJson(data)
         # print(new_data)
+        recommender_system = lt.Litmus()
         result = recommender_system.recommendContent(
         new_data["current_data"], new_data["data_pool"],
         new_data["interest_score"], new_data["number_of_recommendations"],
@@ -69,12 +69,13 @@ def recommendationDebug():
             }
             )
         return jsonify(
-        {"data" : result["new content"],
-        "message" : "",
-        "status" : result["status"]}
+        {"data" : result["new content"]
+        # ,"vector" : result["user taste"]
+        ,"message" : ""
+        ,"status" : result["status"]}
         )
     else:
         return jsonify({"data" : [], "message" : parse[1], "status" : "Failed"})
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug = True)

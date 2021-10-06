@@ -83,6 +83,7 @@ class Litmus:
         "data pool" : self.litmus_vectorizer_obj.getDataPool(),
         "interest score list" : self.litmus_vectorizer_obj.getInterestScore()}
         )
+        print(self.data)
 
 
     def getData(self):
@@ -120,13 +121,13 @@ class Litmus:
         self.system_status = {"status" : "success"}
         self.setData(current_data,data_pool,interest_score_list)
         self.preprocessData()
-        # print(self.getPreprocessedData())
+        print(self.getPreprocessedData())
         self.generateUserTaste(mutation_rate)
         self.generateUserContent(related_content_size)
         return {"status" : "success" ,
         "new content" : self.getNewContent()["new content"]
-        # "tag set" : self.getPreprocessedData()["tag set"],
-        # "user taste" : self.getUserTaste()["user taste"]
+        # ,"tag set" : self.getPreprocessedData()["tag set"]
+        # ,"user taste" : self.getUserTaste()["user taste"]
         }
 
     def summary(self):
